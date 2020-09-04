@@ -22,12 +22,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        
       - name: Install NodeJS
         uses: actions/setup-node@v2-Beta
         with:
-         node-version: 12
+          node-version: 12
+         
      -  name: Install Surge
         run: npm install -g surge
+        
      - name: Run Surge
        run: surge ./ MeryBnaiWebsite.surge.sh -- token ${{secrets.SURGE_TOKEN}}
 
